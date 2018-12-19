@@ -1,0 +1,15 @@
+.logo{
+    height: 80px;
+    width: 200px;
+}
+body{
+    background: #fafafa;
+}
+.main{
+    background: #eff3ff;
+    width: 730px;
+    height: 100%;
+    margin: 0 auto;
+    overflow: fragments;
+    padding: 10px;
+}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}详情-{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/detail.css') }}">
+{% endblock %}
+{% block main %}
+  <h3 class="page-title">{{ question.title }}</h3>
+  <p class="questin-info">
+      <span>作者:{{ question.author.username }}</span>
+      <span>时间：{{ question.create_time }}</span>
+  </p>
+  <hr class="hengxian">
+    <p class="question-content">{{ question.content }}</p>
+  <hr class="hengxian">
+  <h4>当前热议:&nbsp &nbsp({{ question.answers|length }})</h4>
+    <div class="from-content">
+    <form action="{{ url_for('add_answer') }}" method="post">
+    <div class="from-group">
+        <input name="answer_content" type="text" class="from-control" placeholder="写下你的评论">
+        <input name="question_id" type="hidden" value="{{ question.id }}">
+    </div>
+    <div class="from-group" style="text-align: right;margin-top:10px">
+        <button class="btn btn-primary">立即评论</button>
+    </div>
+    </form>
+    </div>
+    <ul class="answer-list">
+        {% for answer in question.answers %}
+        <li>
+            <div class="user-info">
+                <img src="{{ url_for('static',filename='images/zhiliaologo.jpg') }} " alt="用户头像" class="avatar">
+                <span class="username">{{ answer.author.username }}</span>
+                <span class="create-time">{{ answer.create_time }}</span>
+            </div>
+        <p class="answer-content">{{ answer.content }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

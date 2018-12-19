@@ -1,0 +1,40 @@
+.page-title{
+    text-align: center;
+}
+.questin-info{
+    text-align: center;
+    margin-top: 20px;
+}
+.hengxian{
+    border-bottom: 1px solid #225599;
+}
+.from-control{
+    width:700px;
+}
+.answer-list{
+    padding-left: 0;
+}
+.answer-list li{
+    list-style: none;
+    border-bottom: 1px solid #225599;
+}
+.user-info{
+    height:40px;
+    font-size: 16px;
+    color: lightskyblue;
+    margin-top: 10px;
+}
+.user-info .avatar{
+    height: 40px;
+    width: 40px;
+    border-radius:50%
+}
+.user-info .username{
+    margin-left: 15px;
+}
+.user-info .create-time{
+    float: right;
+}
+.answer-content{
+    margin-left: 55px;
+}
